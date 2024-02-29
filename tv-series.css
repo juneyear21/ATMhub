@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #210c2b;
+}
+
+.title {
+  background-color: #51105e77;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+  align-items: center;
+}
+h1 {
+  color: #fff;
+}
+.sub-title {
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
+
+.logo {
+  margin-block: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  border: 0;
+  outline: none;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  backdrop-filter: blur(5px); /* Blurring effect */
+  border-radius: 4px; /* Rounded corners for input field */
+  margin-right: 10px; /* Adjust spacing */
+  color: white;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Placeholder color with transparency */
+  font-size: 16px;
+}
+
+.search-bar i {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Transparent background for icon */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for icon */
+  border-radius: 50%; /* Making the icon circular */
+}
+
+.search-bar i:hover {
+  background-color: rgba(255, 255, 255, 0.377);
+  transition: 0.2s ease-in;
+}
+button {
+  background: none;
+  border: none;
+}
+.option {
+  background-color: #fff;
+  width: 150px;
+  font-size: larger;
+  border-radius: 15px;
+  height: 50px;
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Transparent background for icon */
+}
+.option a {
+  color: white;
+  text-decoration: none;
+}
+
+#searchResults {
+  display: flex;
+  flex-wrap: wrap; /* Allowing items to wrap to the next row */
+  justify-content: center;
+}
+.series-card {
+  width: 250px;
+  color: aliceblue;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column; /* Arrange details in a column */
+  align-items: center; /* Center-align items */
+  overflow: hidden;
+}
+
+.movie-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.movie-image:hover {
+  scale: 1.1;
+  transition: 0.2s ease-in;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column; /* Arrange details in a column */
+  align-items: center; /* Center-align items */
+  text-align: center; /* Center-align text */
+  margin-block: 10px;
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.movie-rating {
+  margin-bottom: 10px;
+}
+
+.watch-now-btn {
+  background-color: #ff008c;
+  color: #fff;
+  border: none;
+  font-size: large;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

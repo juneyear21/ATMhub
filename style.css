@@ -12,7 +12,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
   align-items: center;
 }
-h1{
+h1 {
   color: #fff;
 }
 .sub-title {
@@ -49,7 +49,12 @@ input[type="text"]::placeholder {
 .search-bar i {
   padding: 10px;
   color: rgb(255, 255, 255);
-  background-color: rgba(255,255,255,0.1); /* Transparent background for icon */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Transparent background for icon */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for icon */
   border-radius: 50%; /* Making the icon circular */
 }
@@ -62,14 +67,31 @@ button {
   background: none;
   border: none;
 }
-.tv-series{
+
+.option {
   background-color: #fff;
+  width: 150px;
+  font-size: larger;
+  border-radius: 15px;
+  height: 50px;
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Transparent background for icon */
 }
+.option a {
+  color: white;
+  text-decoration: none;
+}
+
 #moviesContainer {
-    display: flex;
-    flex-wrap: wrap; /* Allowing items to wrap to the next row */
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap; /* Allowing items to wrap to the next row */
+  justify-content: center;
+}
 .movie-card {
   width: 250px;
   color: aliceblue;
@@ -86,12 +108,12 @@ button {
 }
 
 .movie-image {
-    width: 100%;
-    margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
-.movie-image:hover{
-    scale: 1.1;
-    transition: 0.2s ease-in;
+.movie-image:hover {
+  scale: 1.1;
+  transition: 0.2s ease-in;
 }
 
 .movie-details {
@@ -130,4 +152,3 @@ button {
     margin-bottom: 10px;
   }
 }
-
