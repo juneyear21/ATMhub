@@ -19,12 +19,15 @@
   </head>
   <body>
     <header class="title">
-      <a href="index.html"
+      <div class="links">
+        <a href="index.html"
         ><img src="logo.svg" alt="" width="100px" class="logo"
       /></a>
       <button class="option">
         <a href="tv-series.html" class="tv-series"> search Series</a>
       </button>
+      </div>
+      <p>⚠️⚠️Still under-development.⚠️⚠️</p>
       <div class="search-bar">
         <input
           type="text"
@@ -36,22 +39,29 @@
         </button>
       </div>
     </header>
-
-    <div id="moviesContainer">
-      <h1>
-        Still in development. But you can search any movies like "Avengers" or
-        "Tiger 3" at topbar and Stream them.
-      </h1>
+  
+    <div id="moviesContainer1">
+      <div class="movieheader">
+        <p class="nowPlaying">
+          Now Playing 
+        </p>
+        <button id="next">Next</button>
+      </div>
+      <div id="moviesContainer">
+      </div>
     </div>
+
     <div id="movieViewer" style="display: none">
       <iframe
         id="movieFrame"
-        width="1280"
-        height="720"
         frameborder="0"
         allowfullscreen="true"
       ></iframe>
     </div>
+    <div class="footer">
+      <p class="sub-notation">Made with ❤️ by Rahul Chauhan</p>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
