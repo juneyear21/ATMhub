@@ -1,19 +1,20 @@
+const apiKey = "557c35bbbe97da53f3bdfa06f11ff7de";
+const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NTdjMzViYmJlOTdkYTUzZjNiZGZhMDZmMTFmZjdkZSIsInN1YiI6IjY1ZDVmYzYyZmZkNDRkMDE4NzJiMzA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TjyOjpsyuqPvvw97Gk7QyCkmf3x_G8esHJ7IU26ge9M";
+
 function searchMovie() {
   const searchQuery = document.querySelector(".searchInput").value;
   const movieDatabaseAPI = "https://api.themoviedb.org/3/search/movie";
-  const apiKey = "557c35bbbe97da53f3bdfa06f11ff7de";
-
+  
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
+      Authorization: `Bearer ${accessToken}`
     },
   };
 
   fetch(
-    `${movieDatabaseAPI}?query=${encodeURIComponent(
-      searchQuery
-    )}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
+    `${movieDatabaseAPI}?query=${encodeURIComponent(searchQuery)}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
     options
   )
     .then((response) => response.json())
@@ -22,8 +23,6 @@ function searchMovie() {
     })
     .catch((error) => console.error("Error:", error));
 }
-
-
 
 function createMovieCard(movie) {
   return `
@@ -45,7 +44,6 @@ function displayMovies(movies) {
   moviesContainer.innerHTML = "";
 
   movies.forEach((movie) => {
-    console.log(movie);
     const card = createMovieCard(movie);
     moviesContainer.innerHTML += card;
   });
@@ -62,29 +60,38 @@ function watchMovie(movieId) {
 
 let page = 1;
 
-const optionButton = document.getElementById('next');
-optionButton.addEventListener('click', () => {
+const next = document.getElementById('next');
+next.addEventListener('click', () => {
   page++;
   fetchData();
 });
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NTdjMzViYmJlOTdkYTUzZjNiZGZhMDZmMTFmZjdkZSIsInN1YiI6IjY1ZDVmYzYyZmZkNDRkMDE4NzJiMzA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TjyOjpsyuqPvvw97Gk7QyCkmf3x_G8esHJ7IU26ge9M'
+
+const back = document.getElementById('back');
+back.addEventListener('click', () => {
+  if (page > 1) {
+    page -= 1;
+    fetchData();
   }
-};
+});
+
 
 function fetchData() {
-  fetch(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.page)
-      console.log(data)
-      const results = data.results;
-      nowPlaying(results);
-    })
-    .catch(err => console.error(err));
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NTdjMzViYmJlOTdkYTUzZjNiZGZhMDZmMTFmZjdkZSIsInN1YiI6IjY1ZDVmYzYyZmZkNDRkMDE4NzJiMzA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TjyOjpsyuqPvvw97Gk7QyCkmf3x_G8esHJ7IU26ge9M'
+        }
+      };
+      
+      fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`, options)
+        .then(response => response.json())
+        .then(data => {
+            const results = data.results;
+            nowPlaying(results);
+            console.log(data.page)
+          })
+        .catch(err => console.error(err));
 }
 
 function nowPlaying(movies) {
@@ -92,14 +99,13 @@ function nowPlaying(movies) {
   seriesFrame.src = "";
   const moviesContainer = document.getElementById("moviesContainer");
   moviesContainer.innerHTML = "";
-
+  
   movies.forEach((movie) => {
     const card = createMovieCard(movie);
     moviesContainer.innerHTML += card;
+    console.log(movie.original_title)
   });
 }
 
 fetchData();
 
-
-// https://api.themoviedb.org/3/movie/popular?language=en-US&page=1
