@@ -2,7 +2,7 @@ const apiKey = "557c35bbbe97da53f3bdfa06f11ff7de";
 const accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NTdjMzViYmJlOTdkYTUzZjNiZGZhMDZmMTFmZjdkZSIsInN1YiI6IjY1ZDVmYzYyZmZkNDRkMDE4NzJiMzA4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TjyOjpsyuqPvvw97Gk7QyCkmf3x_G8esHJ7IU26ge9M";
 
 function searchMovie() {
-  const searchQuery = document.querySelector(".searchInput").value;
+  const searchQuery = document.querySelector("#searchInput").value;
   const movieDatabaseAPI = "https://api.themoviedb.org/3/search/movie";
   
   const options = {
@@ -23,6 +23,16 @@ function searchMovie() {
     })
     .catch((error) => console.error("Error:", error));
 }
+
+
+const searchButton = document.querySelector("#searchbutton");
+
+searchButton.addEventListener('click',(event) => {
+  event.preventDefault(); // Prevent default form submission behavior
+  searchMovie();
+  console.log("movie search");
+});
+
 
 function createMovieCard(movie) {
   return `

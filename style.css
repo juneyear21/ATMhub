@@ -5,96 +5,6 @@ body {
   color: #fff;
 }
 
-.title {
-  background-color: #0f2452;
-  padding-inline: 20px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
-  align-items: center;
-}
-h1 {
-  color: #fff;
-}
-
-.links{
-  display: flex;
-  align-items: center;
-}
-
-.sub-title {
-  font-size: large;
-  font-weight: bold;
-  color: white;
-}
-
-.logo {
-  margin-block: 10px;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.searchInput {
-  border: 0;
-  outline: none;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.2); /* Transparent background */
-  backdrop-filter: blur(5px); /* Blurring effect */
-  border-radius: 4px; /* Rounded corners for input field */
-  margin-right: 10px; /* Adjust spacing */
-  color: white;
-}
-
-input[type="text"]::placeholder {
-  color: rgba(255, 255, 255, 0.6); /* Placeholder color with transparency */
-  font-size: 16px;
-}
-
-.search-bar i {
-  padding: 10px;
-  color: rgb(255, 255, 255);
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Transparent background for icon */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for icon */
-  border-radius: 50%; /* Making the icon circular */
-}
-
-.search-bar i:hover {
-  background-color: rgba(255, 255, 255, 0.377);
-  transition: 0.2s ease-in;
-}
-button {
-  background: none;
-  border: none;
-}
-
-.option {
-  margin-inline: 20px;
-  background-color: #fff;
-  width: 150px;
-  font-size: larger;
-  border-radius: 15px;
-  height: 50px;
-  padding: 10px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Transparent background for icon */
-  cursor: pointer;
-}
-.option a {
-  color: white;
-  text-decoration: none;
-}
 #moviesContainer {
   display: flex;
   flex-wrap: wrap; /* Allowing items to wrap to the next row */
@@ -206,13 +116,8 @@ margin-inline: 20px;
 .sub-notation {
   text-align: center;
   color: #ffffff;
-  font-size: 24px;
-  padding-top: 8px;
+  font-size: 18px;
 }
-
-.footer {
-  width: 100%;
-  padding-block: 1px;
-  background-color: #152a58;
-  text-align: center;
+#footer{
+  background-color: #1c2d53;
 }
